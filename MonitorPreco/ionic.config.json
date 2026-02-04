@@ -1,0 +1,7 @@
+{
+  "name": "MonitorPreco",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

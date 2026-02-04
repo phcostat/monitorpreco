@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Minhas Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list *ngIf="compras.length > 0">
+    <ion-item-sliding *ngFor="let compra of compras">
+      <ion-item detail>
+        <ion-thumbnail slot="start">
+          <img [src]="compra.urlImagem" />
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ compra.descricao }}</h2>
+          <p>Quantidade: {{ compra.quantidade }}</p>
+          <p>Valor: R$ {{ compra.valor }}</p>
+          <p>Data: {{ compra.data | date:'short' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-text *ngIf="compras.length === 0">
+    <p style="text-align: center; margin-top: 2rem;">Nenhuma compra realizada.</p>
+  </ion-text>
+</ion-content>

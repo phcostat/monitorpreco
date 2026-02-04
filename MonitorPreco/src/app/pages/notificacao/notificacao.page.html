@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Notificação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form [formGroup]="formGroup">
+    <ion-item>
+      <ion-label position="stacked">Produto</ion-label>
+      <ion-input type="text" formControlName="descricao" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Valor Atual</ion-label>
+      <ion-input type="number" formControlName="valorAtual" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Valor Desejado</ion-label>
+      <ion-input type="number" formControlName="valorDesejado" readonly></ion-input>
+    </ion-item>
+
+    <ion-button type="button" expand="block" color="danger" (click)="excluirAlerta()">Finalizar</ion-button>
+    <ion-button expand="block" color="success" (click)="comprarProduto()">Comprar Produto</ion-button>
+    <ion-button type="button" expand="block" color="primary" (click)="fecharAlerta()">Fechar</ion-button>
+  </form>
+</ion-content>

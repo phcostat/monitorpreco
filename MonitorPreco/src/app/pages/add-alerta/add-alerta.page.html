@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/alerta"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Alerta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form [formGroup]="formGroup" (ngSubmit)="salvar()">
+    <ion-item>
+      <ion-label position="stacked">Produto</ion-label>
+      <ion-select value="" okText="Confirmar" cancelText="Cancelar" placeholder="Selecione um produto" formControlName="produto">
+          <ion-select-option *ngFor="let produto of produtos" [value]="produto">{{produto.descricao}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Valor desejado</ion-label>
+      <ion-input type="number" formControlName="valor"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" color="primary" [disabled]="!formGroup.valid">Salvar</ion-button>
+  </form>
+</ion-content>
