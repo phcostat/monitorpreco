@@ -6,6 +6,7 @@ MonitorPreco is an Angular-based application that lets users register products a
 - Email: peh.costa11@gmail.com
 - Instagram: [@phcostat](https://instagram.com/phcostat)
 - GitHub: [@phcostat](https://github.com/phcostat)
+  
 
 ## Features
 - Register products with desired price thresholds.
